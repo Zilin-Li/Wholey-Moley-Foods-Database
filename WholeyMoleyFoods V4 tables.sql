@@ -153,7 +153,7 @@ FOREIGN KEY (BaseBranchID) REFERENCES Branch(BranchID)
 CREATE TABLE Account
 (
 AccountID INTEGER IDENTITY(1,1)  PRIMARY KEY,
-CustomerID INTEGER,
+CustomerID CHAR(8),
 LastPayDate DATETIME,
 LastPayAmount DECIMAL (6,2),
 PaymentTypeID INTEGER,
@@ -186,7 +186,7 @@ FOREIGN KEY (EmployeeID) REFERENCES Employee(EmployeeID)
 CREATE TABLE CustomerOrder
 (
 OrderID INTEGER IDENTITY(1,1)  PRIMARY KEY,
-CustomerID INTEGER,
+CustomerID CHAR(8),
 AccountID INTEGER,
 OrderBranchID INTEGER,
 PickupBranchID INTEGER,
