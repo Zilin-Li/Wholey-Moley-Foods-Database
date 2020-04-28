@@ -1,26 +1,8 @@
 USE WholeyMoleyFoods;
 --L1
-SELECT * FROM CustomerType;
-SELECT * FROM PaymentType;
-SELECT * FROM Allergens;
-SELECT * FROM Product;
-SELECT * FROM Skill;
-SELECT * FROM Branch;
-SELECT * FROM Employee;
-SELECT * FROM SalePerMonth;
-SELECT * FROM BranchProduct;
-SELECT * FROM ProductCombo;
-SELECT * FROM ProductAllergens;
-SELECT * FROM Customer;
-SELECT * FROM WorkBranch;
-SELECT * FROM EmployeeSkill;
-SELECT * FROM Account;
-SELECT * FROM [dbo].[CustomerOrder];
-SELECT * FROM [dbo].[OrderDetail];
 
-
-Delete Skill
-dbcc Checkident (Skill,reseed,0)
+--Delete Skill
+--dbcc Checkident (Skill,reseed,0)
 
 INSERT INTO [dbo].[CustomerType]([TypeName]) VALUES ('VIP'),
 ('VVIP'),
