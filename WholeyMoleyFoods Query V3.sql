@@ -1,3 +1,23 @@
+USE WholeyMoleyFoods;
+-- test all tables
+SELECT * FROM [dbo].[Account]
+SELECT * FROM [dbo].[Allergens]
+SELECT * FROM [dbo].[Branch]
+SELECT * FROM [dbo].[BranchProduct]
+SELECT * FROM [dbo].[Customer]
+SELECT * FROM [dbo].[CustomerOrder]
+SELECT * FROM [dbo].[CustomerType]
+SELECT * FROM [dbo].[Employee] 
+SELECT * FROM [dbo].[EmployeeSkill] 
+SELECT * FROM [dbo].[OrderDetail] 
+SELECT * FROM [dbo].[PaymentType] 
+SELECT * FROM [dbo].[Product] 
+SELECT * FROM [dbo].[ProductAllergens] 
+SELECT * FROM [dbo].[ProductCombo]
+SELECT * FROM [dbo].[SalePerMonth]
+SELECT * FROM [dbo].[Skill]
+SELECT * FROM [dbo].[WorkBranch]
+
 -- get staff names who have IT skill
 SELECT e.FirstName, e.LastName FROM EmployeeSkill es
 	INNER JOIN Employee e on e.EmployeeID = es.EmployeeID
@@ -35,3 +55,10 @@ SELECT c.FirstName, c.LastName, p.TypeName from Customer c
 
 
 
+--get all items for order 1, and display few colums
+SELECT co.OrderID,p.ProductName, od.OrderQuantity, od.UnitPrice, b.BranchName FROM  OrderDetail od
+	INNER JOIN CustomerOrder co on od.OrderID = co.OrderID
+	INNER JOIN BranchProduct bp on bp.BranchProductID = od.BranchProductID
+	INNER JOIN Product p on p.ProductID = bp.ProductID
+	INNER JOIN Branch b on b.BranchID = bp.BranchID
+	WHERE co.OrderID = 1

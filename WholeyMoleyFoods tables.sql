@@ -1,4 +1,7 @@
 CREATE DATABASE WholeyMoleyFoods
+
+USE WholeyMoleyFoods;
+
 --L5
 Drop table OrderDetail;
 --L4
@@ -21,9 +24,6 @@ Drop table Branch;
 Drop table Allergens;
 Drop table CustomerType;
 Drop table PaymentType;
-
-
-USE WholeyMoleyFoods;
 
 --L1
 
